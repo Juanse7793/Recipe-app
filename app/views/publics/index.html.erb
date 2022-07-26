@@ -1,3 +1,8 @@
-<% @publics.each do |public|%>
-<%= public.name%><br/>
-<%end%>
+<div class="publics">
+    <h4>Public Recipes</h4>
+    <ul class="publis-list">
+        <% @publics.each do |public|%>
+            <li><%= public.name%></li>
+        <%end%>
+    <ul>
+</div>
