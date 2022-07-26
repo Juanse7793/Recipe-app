@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root "foods#index"
   resources :receipts, only:[:index, :show] 
   resources :publics, only:[:index]
+  resources :shoppings, only:[:index]
 end
