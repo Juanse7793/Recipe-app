@@ -1,5 +1,5 @@
 class PublicsController < ApplicationController
   def index 
-    @publics = Receipt.all
+    @publics = Receipt.where(:public => true)
   end
 end
