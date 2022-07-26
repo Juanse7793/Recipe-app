@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "foods#index"
   resources :receipts, only:[:index, :show] 
+  resources :publics, only:[:index]
 end
