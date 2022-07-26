@@ -1,8 +1,17 @@
 <div class="publics">
-    <h4>Public Recipes</h4>
+    <h2>Public Recipes</h2>
     <ul class="publis-list">
         <% @publics.each do |public|%>
-            <li><%= public.name%></li>
+            <li>
+                <div class="label">
+                    <h4><%= public.name%></h4>
+                    <caption> By <%= public.user.name %></caption>
+                </div>
+                <div class="details">
+                    <p> Total Food Items : <%= public.recipe_foods.length %></p>
+                    <p> Total Price : $ <%= public.total_price %></p>
+                </div>
+            </li>
         <%end%>
     <ul>
 </div>
