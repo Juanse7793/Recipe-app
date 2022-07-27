@@ -12,12 +12,16 @@ class ReceiptsController < ApplicationController
     @foods = Food.all
   end
 
-  def create
+
+  def add_food_view
+    render  "add_food"
+  end
+  def add_food
     @receipt = Receipt.find(params[:receipt_id])
-    @food = Food.find(recipe_food_params[:food_id])
-    @receiptfood = RecipeFood.new(quantity: recipe_food_params[:quantity], food: @food, receipt: @receipt)
+    @food = Food.find(params[:food_id])
+    @receiptfood = RecipeFood.new(quantity: params[:quantity], food: @food, receipt: @receipt)
     if @receiptfood.save
-      redirect_to receipts_path
+      redirect_to user_receipt_path(id: @receipt.id)
     else
       print @receiptfood
       render :new
@@ -31,7 +35,4 @@ class ReceiptsController < ApplicationController
     redirect_to user_receipt_path
   end
 
-  def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :food_id)
-  end
 end

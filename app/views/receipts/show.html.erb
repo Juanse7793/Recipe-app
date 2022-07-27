@@ -13,7 +13,7 @@
     </div>
     <div class="recipe-actions">
         <button class="shopping"> Generate shopping List </button>
-        <%= link_to new_user_receipt_path do %>
+        <%= link_to user_receipt_add_food_path(receipt_id: @receipt.id) do %>
           <button class="shopping"> Add Ingredient </button>
         <% end %>
     </div>

@@ -1,0 +1,16 @@
+<div class='new_rf_container'>
+    <h1 class= 'new_rf_title'>Add Ingredient</h1>
+  <%= form_tag('add', method: 'post') do  |f| %>
+        <%= label_tag  :food_id, 'Food' %>
+        <%= select_tag  :food_id, options_from_collection_for_select(Food.all, "id", "name")  %>
+        <%= label_tag :quantity %>
+        <%= number_field_tag :quantity %>
+        <%= submit_tag "Add Food" %>
+    <% end %>
+</div>
+
+<div>
+    <%= link_to user_receipt_path(user_id:6, id:1) do %>
+        <button>Back to Receipt Index</button>
+    <% end %>
+</div>
