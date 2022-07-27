@@ -11,6 +11,6 @@ class ReceiptsController < ApplicationController
     @receipt = Receipt.find(params[:receipt_id])
     @food = RecipeFood.find(params[:id])
     @receipt.recipe_foods.delete(@food)
-    redirect_to receipts_path
+    redirect_to user_receipt_path
   end
 end
