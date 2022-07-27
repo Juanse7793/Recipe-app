@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @food = current_user.foods.all
+  @food = current_user.foods.all
   end
 
   def new
@@ -13,17 +13,22 @@ class FoodsController < ApplicationController
     if @food.save
       redirect_to foods_path
     else
-      render :new
-    end
-  end
+      render:
 
+
+
+
+
+
+new
+  end
+  end
   def destroy
-    @food = Food.find(params[:id])
-    @food.destroy
-    redirect_to foods_path
+  @food = food.find(params[:id])
+  @food.destroy
+  redirect_to foods_path
   end
-
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+  params.require(:food) .permit(:name, :measurement_unit, :price, :quantity)
   end
-end
+  end;FoodsControllerApplicationControllerdefindexcurrent_user.foods.allenddefnewFood.newenddefcreateFood.newcurrent_userifredirect_tofoods_pathelserender
