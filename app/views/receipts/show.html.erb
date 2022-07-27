@@ -1,0 +1,43 @@
+<div class="recipe-details">
+    <h2><%=@receipt.name%></h2>
+    <div class="desc">
+        <div class="text">
+            <p>Preparation Time : <%= @receipt.preparation_time %></p>
+            <p>Cooking Time : <%= @receipt.cooking_time %></p>
+            <p><%=@receipt.description %></p>
+        </div>
+        <div class="actions">
+            <label>Public</label>
+            <%= check_box_tag 'isPublic', 'no', @receipt.public, class: "name" %>
+        </div>
+    </div>
+    <div class="recipe-actions">
+        <button class="shopping"> Generate shopping List </button>
+         <button class="shopping"> Add Ingredient </button>
+    </div>
+    <hr/>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Quantity</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @receipt.recipe_foods.each do |recipe_food| %>
+                <tr>
+                    <td><%= recipe_food.food.name %></td>
+                    <td><%= recipe_food.quantity %> <%=recipe_food.food.measurement_unit%></td>
+                    <td>$ <%= recipe_food.food.price %></td>
+                    <td>
+                        <%= link_to 'Modify', receipts_path%>
+                        <%= link_to 'Remove', receipt_remove_food_path(receipt_id:@receipt.id,id:recipe_food.id), method: :delete %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
