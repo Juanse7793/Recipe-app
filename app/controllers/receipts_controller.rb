@@ -13,12 +13,13 @@ class ReceiptsController < ApplicationController
   end
 
   def create
-    @receiptfood = RecipeFood.new(recipe_food_params)
-    @receiptfood.receipt = Receipt.find(params[:receipt_id])
-    @receiptfood.food = Food.find(recipe_food_params[:food_id])
+    @receipt = Receipt.find(params[:receipt_id])
+    @food = Food.find(recipe_food_params[:food_id])
+    @receiptfood = RecipeFood.new(quantity: recipe_food_params[:quantity], food: @food, receipt: @receipt)
     if @receiptfood.save
       redirect_to receipts_path
     else
+      print @receiptfood
       render :new
     end
   end
