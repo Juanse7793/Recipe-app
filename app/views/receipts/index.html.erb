@@ -1,4 +1,16 @@
-<h4>Recipes</h4>
-<% @receipts.each do |receipt| %>
-    <%=receipt.name%> <br/>
-<%end%>
+<div class="recipes">
+    <h2>Recipes</h2>
+    <ul class="recipes-list">
+        <% @receipts.each do |receipt| %>
+            <li class="recipe">
+                <div class="label">
+                    <h4><%=receipt.name%></h4>
+                    <a>REMOVE</a>
+                </div>
+                <div class="desc">
+                    <p><%=receipt.description%></p>
+                </div>
+            </li>
+        <%end%>
+    </ul>
+</div>
