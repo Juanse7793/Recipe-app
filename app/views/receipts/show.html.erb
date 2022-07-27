@@ -33,12 +33,9 @@
                     <td><%= recipe_food.quantity %> <%=recipe_food.food.measurement_unit%></td>
                     <td>$ <%= recipe_food.food.price %></td>
                     <td>
-                        <%# link_to 'Edit', edit_recipe_food_path(recipe_food) %>
-                        <%# link_to 'Destroy', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %>
-                        <a>Modify</a>
-                        <a>Remove</a>
+                        <%= link_to 'Modify', receipts_path%>
+                        <%= link_to 'Remove', receipt_remove_food_path(receipt_id:@receipt.id,id:recipe_food.id), method: :delete %>
                     </td>
-
                 </tr>
             <% end %>
         </tbody>

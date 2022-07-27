@@ -1,9 +1,6 @@
 class FoodsController < ApplicationController
   def index
+    @users = User.all
     @foods = Food.all
   end
-
-  def create; end
-
-  def destroy; end
 end

@@ -6,4 +6,12 @@ class ReceiptsController < ApplicationController
   def show
     @receipt = Receipt.find(params[:id])
   end
+
+  def remove_food
+    @receipt = Receipt.find(params[:receipt_id])
+    @food = RecipeFood.find(params[:id])
+    @receipt.recipe_foods.delete(@food)
+    redirect_to receipts_path
+  end
+
 end

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "foods#index"
-  resources :receipts, only:[:index, :show] 
+  resources :receipts, only:[:index, :show] do
+    get "/foods/:id/remove" => "receipts#remove_food", as: :remove_food
+  end
   resources :publics, only:[:index]
   resources :shoppings, only:[:index]
 end
