@@ -1,0 +1,35 @@
+.index-container {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-f-button {
+  text-align: end;
+  width: 82%;
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  text-align: center;
+  width: 70%;
+  border: 1px rgb(0, 0, 0) groove;
+  border-radius: 10px;
+}
+
+.button-af {
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: rgb(182, 182, 182);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.add_food_button {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}

@@ -13,5 +13,4 @@ class ReceiptsController < ApplicationController
     @receipt.recipe_foods.delete(@food)
     redirect_to receipts_path
   end
-
 end

@@ -1,1 +1,31 @@
-<p>hello</p>
+<div class="add-f-button">
+    <button class="button-af">
+      <%= link_to "Add Food", new_food_path, {:class => "add_food_button"} %>
+    </button>
+</div>
+<div class='index-container'>
+      <table class="table-container">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Measurement unit</th>
+            <th>Unit price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @food.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td>$ <%= food.price %></td>
+            <td>
+              <div>
+                <%=button_to "Delete", {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete, class: 'delete-button' %>
+             </div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+</div>
