@@ -1,0 +1,18 @@
+<div class='new_rf_container'>
+    <h1 class= 'new_rf_title'>Add Ingredient</h1>
+    <%= form_with model: @receiptfood do |f| %>
+        <% @foods.each do |food| %>
+            <%= f.check_box :food_id, value: food.id %>
+            <%= f.label :food_id, food.name %>
+        <% end %>
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity %>
+        <%= f.submit "Add Ingredient" %>
+    <% end %>
+</div>
+
+<div>
+    <%= link_to user_receipt_path(user_id:6, id:1) do %>
+        <button>Back to Receipt Index</button>
+    <% end %>
+</div>

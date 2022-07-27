@@ -13,7 +13,9 @@
     </div>
     <div class="recipe-actions">
         <button class="shopping"> Generate shopping List </button>
-         <button class="shopping"> Add Ingredient </button>
+        <%= link_to new_user_receipt_path do %>
+          <button class="shopping"> Add Ingredient </button>
+        <% end %>
     </div>
     <hr/>
 
@@ -31,7 +33,7 @@
                 <tr>
                     <td><%= recipe_food.food.name %></td>
                     <td><%= recipe_food.quantity %> <%=recipe_food.food.measurement_unit%></td>
-                    <td>$ <%= recipe_food.food.price %></td>
+                    <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
                     <td>
                         <%= link_to 'Modify', user_receipts_path%>
                         <%= link_to 'Remove', user_receipt_remove_food_path(receipt_id:@receipt.id,id:recipe_food.id), method: :delete %>
