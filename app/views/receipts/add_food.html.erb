@@ -10,7 +10,7 @@
 </div>
 
 <div>
-    <%= link_to user_receipt_path(user_id:6, id:1) do %>
+    <%= link_to user_receipt_path(user_id: current_user.id, id:@receipt.id) do %>
         <button>Back to Receipt Index</button>
     <% end %>
 </div>
