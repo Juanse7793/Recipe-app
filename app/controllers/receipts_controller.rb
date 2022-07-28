@@ -8,11 +8,6 @@ class ReceiptsController < ApplicationController
     @receipt = Receipt.find(params[:id])
   end
 
-  def new
-    @receipt = RecipeFood.new
-    @foods = Food.all
-  end
-
   def add_food_view
     render 'add_food'
   end
