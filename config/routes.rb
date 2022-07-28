@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :foods, only: [:index, :new, :create, :destroy]
     resources :receipts, only:[:index, :show, :new, :create, :destroy]  do
       get "/foods/:id/remove" => "receipts#remove_food", as: :remove_food
+      get "/foods/add" => "receipts#add_food_view", as: :add_food_view
+      post "/foods/add" => "receipts#add_food", as: :add_food
     end
     resources :publics, only:[:index]
     resources :shoppings, only:[:index]

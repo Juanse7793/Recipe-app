@@ -6,12 +6,6 @@
   align-items: center;
 }
 
-.add-f-button {
-  text-align: end;
-  width: 82%;
-  margin-bottom: 2rem;
-}
-
 .table-container {
   text-align: center;
   width: 70%;
@@ -19,17 +13,40 @@
   border-radius: 10px;
 }
 
+.add-f-button {
+  width: 83%;
+  text-align: end;
+  margin: 0 5rem 1.5rem 0;
+}
+
 .button-af {
-  width: 100px;
-  height: 50px;
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
   border: none;
-  background-color: rgb(182, 182, 182);
-  color: rgb(0, 0, 0);
-  border-radius: 10px;
+  border-radius: 45px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
 .add_food_button {
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
+  color: black;
+}
+
+.button-af:hover {
+  background-color: #23c483;
+  box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button-af:active {
+  transform: translateY(-1px);
 }
