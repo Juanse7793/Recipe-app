@@ -30,7 +30,6 @@
             font-size: 18px;
             font-weight: 600;
           }
-  
           p {
             margin: 0;
             font-size: 14px;
@@ -56,5 +55,35 @@
         display: flex;
         justify-content: flex-end;
     }
+}
+
+.new_recipe {
+  width: 80%;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-weight: 600;
   }
+  form {
+    width:100%;
+    .field{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0;
+
+      label {
+        margin-bottom: 4px;
+      }
+      input {
+        height: 32px;
+      }
+    }
+    .public-field {
+      
+    }
+  }
+}
   
