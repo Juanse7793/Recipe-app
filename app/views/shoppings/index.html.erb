@@ -18,8 +18,8 @@
             <% @shoppings.each do |shopping| %>
               <tr>
                 <td><%= shopping.food.name %></td>
-                <td><%= shopping.requiredQuantity %></td>
-                <td>$<%= shopping.food.price * shopping.requiredQuantity%></td>
+                <td><%= shopping.required_quantity %></td>
+                <td>$<%= shopping.food.price * shopping.required_quantity%></td>
               </tr>
             <% end %>    
           </tbody>
