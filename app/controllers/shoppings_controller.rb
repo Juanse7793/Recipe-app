@@ -1,5 +1,16 @@
+require_relative '../models/shopping_item'
 class ShoppingsController < ApplicationController
   def index
-    @shoppings = Food.all
+    @shoppings = []
+    @recipes = Receipt.includes([:recipe_foods]).all
+    @recipes.each do |recipe|
+      recipe.recipe_foods.each do |recipe_food|
+        if recipe_food.quantity > recipe_food.food.quantity
+          shopping_item  = ShoppingItem.new(recipe_food.food,recipe_food.quantity - recipe_food.food.quantity)
+          @shoppings << shopping_item
+        end
+      end
+    end
+    @total_price = @shoppings.inject(0) { |sum, shopping_item| sum +  shopping_item.food.price * shopping_item.requiredQuantity}
   end
 end

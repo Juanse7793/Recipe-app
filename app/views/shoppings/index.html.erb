@@ -3,8 +3,8 @@
 <div class="shoppings">
   <h1 class='shop-title'>Shopping List</h1>
   <div class='flex-shop'>
-    <h2 class='amount'>Amount of food items to buy: 3</h2>
-    <h2>Total value of food needed: $819</h2>
+    <h2 class='amount'>Amount of food items to buy: <%= @shoppings.length%></h2>
+    <h2>Total value of food needed: $<%=@total_price%></h2>
   </div>
   <table class='shop-table'>
           <thead>
@@ -17,9 +17,9 @@
           <tbody>
             <% @shoppings.each do |shopping| %>
               <tr>
-                <td><%= shopping.name %></td>
-                <td><%= shopping.quantity %></td>
-                <td><%= shopping.price %></td>
+                <td><%= shopping.food.name %></td>
+                <td><%= shopping.requiredQuantity %></td>
+                <td>$<%= shopping.food.price * shopping.requiredQuantity%></td>
               </tr>
             <% end %>    
           </tbody>
