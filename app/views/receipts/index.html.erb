@@ -2,11 +2,13 @@
 
 <div class="recipes">
     <h2>Recipes</h2>
-    <div class="add-btn">
-      <%= link_to new_user_receipt_path do %>
-          <button class="add-recipe"> Add Recipe </button>
-        <% end %>
-    </div>
+
+  <div class="add-f-button">
+    <button class="button-af">
+      <%= link_to "Add Recipe", new_user_receipt_path, {:class => "add_food_button"} %>
+    </button>
+  </div>
+
     <ul class="recipes-list">
         <% @receipts.each do |receipt| %>
             <li class="recipe">
