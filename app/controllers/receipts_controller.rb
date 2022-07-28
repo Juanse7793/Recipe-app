@@ -31,6 +31,11 @@ class ReceiptsController < ApplicationController
     end
   end
 
+  def destroy
+    @receipt = Receipt.find(params[:id])
+    @receipt.destroy
+    redirect_to user_receipts_path
+  end
   def receipt_params
     params.require(:receipt).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
