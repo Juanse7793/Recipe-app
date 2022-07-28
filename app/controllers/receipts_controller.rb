@@ -15,7 +15,7 @@ class ReceiptsController < ApplicationController
     redirect_to user_receipt_path
   end
 
-  def new 
+  def new
     @receipt = Receipt.new
     @user = current_user
   end
@@ -27,7 +27,7 @@ class ReceiptsController < ApplicationController
     if @receipt.save
       redirect_to user_receipts_path
     else
-      print "Failed to Save User"
+      print 'Failed to Save User'
       render :new
     end
   end
@@ -37,6 +37,7 @@ class ReceiptsController < ApplicationController
     @receipt.destroy
     redirect_to user_receipts_path
   end
+
   def receipt_params
     params.require(:receipt).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
