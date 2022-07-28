@@ -10,7 +10,7 @@
             <li class="recipe">
                 <div class="label">
                     <h4><%=receipt.name%></h4>
-                    <%= button_to "REMOVE", user_receipt_path(id:receipt.id), method: :delete, class: 'delete-recipe'%>
+                    <%= button_to "REMOVE", user_receipt_path(id:receipt.id), method: :delete, class: 'delete-recipe' if receipt.user==@user%>
                 </div>
                 <div class="desc">
                     <p><%=receipt.description%></p>
