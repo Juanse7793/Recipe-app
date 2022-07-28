@@ -1,0 +1,27 @@
+<div class='new_container'>
+    <h1 class= 'new_title'>Add Recipe</h1>
+    <%= form_with model: @receipt, url: user_receipts_path(@user)  do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.label :preparation_time %>
+      <%= f.number_field :preparation_time, step: :any %>
+
+      <%= f.label :cooking_time %>
+      <%= f.number_field :cooking_time, step: :any %>
+
+      <%= f.label :public %>
+      <%= f.check_box :public %>
+
+      <%= f.submit "submit" %>
+    <% end %>
+</div>
+
+<div>
+    <%= link_to user_receipts_path do %>
+        <button>Back to Recipes</button>
+    <% end %>
+</div>
