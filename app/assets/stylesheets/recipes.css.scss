@@ -25,6 +25,10 @@
   
         .label {  
             width: 50%;
+          a{
+            text-decoration: none;
+            color: black;
+          }
           h4 {
             margin: 0;
             font-size: 18px;
@@ -80,9 +84,6 @@
       input {
         height: 32px;
       }
-    }
-    .public-field {
-      
     }
   }
 }
