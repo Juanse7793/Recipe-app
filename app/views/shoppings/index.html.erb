@@ -18,7 +18,7 @@
             <% @shoppings.each do |shopping| %>
               <tr>
                 <td><%= shopping.food.name %></td>
-                <td><%= shopping.required_quantity %></td>
+                <td><%= shopping.required_quantity %> <%=shopping.food.measurement_unit%></td>
                 <td>$<%= shopping.food.price * shopping.required_quantity%></td>
               </tr>
             <% end %>    
