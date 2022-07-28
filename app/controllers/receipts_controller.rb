@@ -12,10 +12,10 @@ class ReceiptsController < ApplicationController
     @foods = Food.all
   end
 
-
   def add_food_view
-    render  "add_food"
+    render 'add_food'
   end
+
   def add_food
     @receipt = Receipt.find(params[:receipt_id])
     @food = Food.find(params[:food_id])
@@ -34,5 +34,4 @@ class ReceiptsController < ApplicationController
     @receipt.recipe_foods.delete(@food)
     redirect_to user_receipt_path
   end
-
 end
