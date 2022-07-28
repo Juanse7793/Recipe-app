@@ -18,6 +18,10 @@ gem 'devise'
 
 gem 'cancancan'
 
+# Bullet
+
+gem 'bullet'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
