@@ -1,7 +1,7 @@
 class ReceiptsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @receipts = Receipt.where(user: @user).or(Receipt.where(public: true))
+    @receipts = Receipt.includes([:user]).where(user: @user).or(Receipt.where(public: true))
   end
 
   def show
