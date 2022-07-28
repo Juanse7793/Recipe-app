@@ -1,10 +1,10 @@
 <%= render '/menu' %>
 
 <div class="shoppings">
-  <h1 class='shop-title'>Shopping List</h1>
+  <h2 class='shop-title'>Shopping List</h2>
   <div class='flex-shop'>
-    <h2 class='amount'>Amount of food items to buy: <%= @shoppings.length%></h2>
-    <h2>Total value of food needed: $<%=@total_price%></h2>
+    <h4 class='amount'>Amount of food items to buy:<span><%= @shoppings.length%></span></h4>
+    <h4>Total value of food needed:<span>$<%=@total_price%></span></h4>
   </div>
   <table class='shop-table'>
           <thead>
