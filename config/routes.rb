@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root "foods#index"
   resources :users do 
     resources :foods, only: [:index, :new, :create, :destroy]
-    resources :receipts, only:[:index, :show, ]  do
+    resources :receipts, only:[:index, :show, :new, :create, :destroy]  do
       get "/foods/:id/remove" => "receipts#remove_food", as: :remove_food
       get "/foods/add" => "receipts#add_food_view", as: :add_food_view
       post "/foods/add" => "receipts#add_food", as: :add_food
