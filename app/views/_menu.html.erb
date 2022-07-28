@@ -1,0 +1,23 @@
+<header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="#" class="brand">Recipe App</a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              menu
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item"><%= link_to "Food", user_foods_path(current_user), {:class => "a-links"} %> </li>
+              <li class="nav__item"><%= link_to "Recipes", user_receipts_path(current_user), {:class => "a-links"} %> </li>
+              <li class="nav__item"><%= link_to "Public recipes", user_publics_path(current_user), {:class => "a-links"} %> </li>
+              <li class="nav__item"><%= link_to "Shopping list", user_shoppings_path(current_user), {:class => "a-links"} %> </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <%= link_to "Sign out", destroy_user_session_path, {:class => "button-si"} %>
+        </div>
+      </div>
+    </header>
