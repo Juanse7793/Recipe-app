@@ -1,6 +1,7 @@
 class ReceiptsController < ApplicationController
   def index
-    @receipts = Receipt.all
+    @user = User.find(params[:user_id])
+    @receipts = Receipt.where(user: @user)
   end
 
   def show
