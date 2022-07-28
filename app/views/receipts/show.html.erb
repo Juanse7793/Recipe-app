@@ -13,12 +13,19 @@
             <%= check_box_tag 'isPublic', 'no', @receipt.public, class: "name" %>
         </div>
     </div>
-    <div class="recipe-actions">
-        <button class="shopping"> Generate shopping List </button>
-        <%= link_to user_receipt_add_food_path(receipt_id: @receipt.id) do %>
-          <button class="shopping"> Add Ingredient </button>
-        <% end %>
+
+  <div class='dflex-show'>
+    <div class="add-g-button">
+          <button class="button-g">
+            <%= link_to "Generate shopping list", user_shoppings_path, {:class => "add_generate_button"} %>
+          </button>
     </div>
+    <div class="add-i-button">
+          <button class="button-i">
+            <%= link_to "Add Ingredient", user_receipt_add_food_path(receipt_id: @receipt.id), {:class => "add_ingredient_button"} %>
+          </button>
+    </div>
+  </div>
     <hr/>
 
     <table>

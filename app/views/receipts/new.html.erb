@@ -1,6 +1,6 @@
 <div class='new_container'>
     <h2 class= 'title-f'>Add Recipe</h2>
-    <%= form_with model: @receipt, url: user_receipts_path(@user)  do |f| %>
+    <%= form_with model: @receipt, url: user_receipts_path(current_user)  do |f| %>
      <div class="field">
         <%= f.label :name, class:'label-f' %></br>
         <%= f.text_field :name, class:'input-f' %>
@@ -31,7 +31,7 @@
 
         <div class="back--button">
           <button class="button--bb">
-            <%= link_to "Back to Receipts", user_receipts_path, {:class => "ret-button"} %>
+            <%= link_to "Back to Receipts", user_receipts_path(current_user), {:class => "ret-button"} %>
           </button>
         </div>
       </div>

@@ -9,6 +9,7 @@ class ReceiptsController < ApplicationController
   end
 
   def add_food_view
+    @receipt = Receipt.find(params[:receipt_id])
     render 'add_food'
   end
 
