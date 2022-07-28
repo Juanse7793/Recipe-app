@@ -12,7 +12,6 @@ class ShoppingsController < ApplicationController
       end
     end
 
-
     @total_price = @shoppings.inject(0) do |sum, shopping_item|
       sum + (shopping_item.food.price * shopping_item.required_quantity)
     end
