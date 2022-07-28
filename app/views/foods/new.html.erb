@@ -1,20 +1,26 @@
 <div class='new_container'>
-    <h1 class= 'new_title'>Add Food</h1>
+    <h1 class= 'title-f'>Add Food</h1>
     <%= form_with model: @food do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :measurement_unit %>
-      <%= f.text_field :measurement_unit %>
-      <%= f.label :price %>
-      <%= f.number_field :price, step: 0.5 %>
-      <%= f.label :quantity %>
-      <%= f.number_field :quantity %>
-      <%= f.submit "Add Food" %>
-    <% end %>
-</div>
+      <%= f.label :name, class:'label-f' %></br>
+      <%= f.text_field :name, class:'input-f'%></br>
+      <%= f.label :measurement_unit, class:'label-f' %></br>
+      <%= f.text_field :measurement_unit, class:'input-f' %></br>
+      <%= f.label :price, class:'label-f' %></br>
+      <%= f.number_field :price, step: 0.5, class:'input-f' %></br>
+      <%= f.label :quantity, class:'label-f' %></br>
+      <%= f.number_field :quantity, class:'input-f' %></br>
+      <div class='dflex'>
+        <div class="back--button">
+          <button class="button-af">
+            <%= f.submit "Add", class:'addi' %>
+          </button>
+        </div>
 
-<div>
-    <%= link_to foods_path do %>
-        <button>Back to Food Index</button>
+        <div class="back--button">
+          <button class="button--bb">
+            <%= link_to "Back to Food", user_foods_path(current_user), {:class => "ret-button"} %>
+          </button>
+        </div>
+      </div>
     <% end %>
 </div>
