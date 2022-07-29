@@ -12,6 +12,13 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 - Ruby on Rails
 
 
+## Test this App
+
+[Recipe App by Juan & Isaac](https://agile-fjord-71070.herokuapp.com/)
+
+- Email: 'luis@luis.com'
+- Password: '123456'
+
 ## Run it
 
 Use the following steps to run this Project locally:
