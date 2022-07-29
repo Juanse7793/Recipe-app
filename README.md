@@ -16,8 +16,10 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 [Recipe App by Juan & Isaac](https://agile-fjord-71070.herokuapp.com/)
 
-- Email: 'luis@luis.com'
+- Email: 'luis@luis.com' 
 - Password: '123456'
+
+or Sign Up! :)
 
 ## Run it
 
