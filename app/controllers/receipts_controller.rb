@@ -5,7 +5,7 @@ class ReceiptsController < ApplicationController
   end
 
   def show
-    @receipt = Receipt.find(params[:id])
+    @receipt = Receipt.includes([:recipe_foods]).find(params[:id])
   end
 
   def add_food_view
