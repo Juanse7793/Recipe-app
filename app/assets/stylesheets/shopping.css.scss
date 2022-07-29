@@ -1,0 +1,40 @@
+.shoppings {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-shop {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+
+  h4 {
+    font-weight: 600;
+
+    span {
+      font-weight: 400;
+    }
+  }
+}
+
+.amount {
+  margin-right: 3rem;
+}
+
+.shop-table {
+  text-align: center;
+  width: 70%;
+  border: 1px rgb(0, 0, 0) groove;
+  border-radius: 10px;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(210, 210, 210);
+}
+
+th {
+  background-color: rgb(190, 190, 190);
+}

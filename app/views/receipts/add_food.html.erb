@@ -1,0 +1,22 @@
+<div class='new_container'>
+    <h1 class= 'title-f'>Add Ingredient</h1>
+  <%= form_tag('add', method: 'post') do  |f| %>
+        <%= label_tag  :food_id, 'Food', class:'label-f' %></br>
+        <%= select_tag  :food_id, options_from_collection_for_select(Food.all, "id", "name"), class:'input-f'   %></br>
+        <%= label_tag :quantity, 'Quantity', class:'label-f' %></br>
+        <%= number_field_tag :quantity, class:'input-f' %></br>
+        <div class='dflex'>
+        <div class="back--button">
+          <button class="button-af">
+            <%= submit_tag "Add", class:'addi' %>
+          </button>
+        </div>
+
+        <div class="back--button">
+          <button class="button--bb">
+            <%= link_to "Back to Receipts", user_receipts_path(current_user), {:class => "ret-button"} %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+</div>

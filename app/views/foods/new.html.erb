@@ -1,0 +1,26 @@
+<div class='new_container'>
+    <h1 class= 'title-f'>Add Food</h1>
+    <%= form_with model: @food do |f| %>
+      <%= f.label :name, class:'label-f' %></br>
+      <%= f.text_field :name, class:'input-f'%></br>
+      <%= f.label :measurement_unit, class:'label-f' %></br>
+      <%= f.text_field :measurement_unit, class:'input-f' %></br>
+      <%= f.label :price, class:'label-f' %></br>
+      <%= f.number_field :price, step: 0.5, class:'input-f' %></br>
+      <%= f.label :quantity, class:'label-f' %></br>
+      <%= f.number_field :quantity, class:'input-f' %></br>
+      <div class='dflex'>
+        <div class="back--button">
+          <button class="button-af">
+            <%= f.submit "Add", class:'addi' %>
+          </button>
+        </div>
+
+        <div class="back--button">
+          <button class="button--bb">
+            <%= link_to "Back to Food", user_foods_path(current_user), {:class => "ret-button"} %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+</div>

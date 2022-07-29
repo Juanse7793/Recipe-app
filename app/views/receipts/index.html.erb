@@ -1,0 +1,27 @@
+<%= render '/menu' %>
+
+<div class="recipes">
+    <h2>Recipes</h2>
+
+  <div class="add-f-button">
+    <button class="button-af">
+      <%= link_to "Add Recipe", new_user_receipt_path, {:class => "add_food_button"} %>
+    </button>
+  </div>
+
+    <ul class="recipes-list">
+        <% @receipts.each do |receipt| %>
+            <li class="recipe">
+                <div class="label">
+                    <%= link_to user_receipt_path(id: receipt.id) do%>
+                        <h4><%=receipt.name%></h4>
+                    <%end%>
+                    <%= button_to "REMOVE", user_receipt_path(id:receipt.id), method: :delete, class: 'delete-recipe' if receipt.user==@user%>
+                </div>
+                <div class="desc">
+                    <p><%=receipt.description%></p>
+                </div>
+            </li>
+        <%end%>
+    </ul>
+</div>

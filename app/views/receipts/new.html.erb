@@ -1,0 +1,40 @@
+<div class='new_container'>
+    <h2 class= 'title-f'>Add Recipe</h2>
+    <%= form_with model: @receipt, url: user_receipts_path(current_user)  do |f| %>
+     <div class="field">
+        <%= f.label :name, class:'label-f' %></br>
+        <%= f.text_field :name, class:'input-f' %>
+     </div>
+    <div class="field">
+        <%= f.label :description, class:'label-f' %>
+        <%= f.text_area :description, class:'input-f' %>
+    </div>
+    <div class="field">
+        <%= f.label :preparation_time, class:'label-f' %>
+        <%= f.number_field :preparation_time, step: :any, class:'input-f' %>
+    </div>
+    <div class="field">
+        <%= f.label :cooking_time, class:'label-f' %>
+        <%= f.number_field :cooking_time, step: :any, class:'input-f' %>
+    </div>
+
+    <div class="public-field">
+        <%= f.label :public, class:'label-f' %>
+        <%= f.check_box :public %>
+    </div>
+    <div class='dflex'>
+        <div class="back--button">
+          <button class="button-af">
+            <%= f.submit "Add", class:'addi' %>
+          </button>
+        </div>
+
+        <div class="back--button">
+          <button class="button--bb">
+            <%= link_to "Back to Receipts", user_receipts_path(current_user), {:class => "ret-button"} %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+</div>
+

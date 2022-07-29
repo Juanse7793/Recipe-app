@@ -1,0 +1,19 @@
+<%= render '/menu' %>
+
+<div class="publics">
+    <h2>Public Recipes</h2>
+    <ul class="publics-list">
+        <% @publics.each do |public|%>
+            <li>
+                <div class="label">
+                    <h4><%= public.name%></h4>
+                    <p> By: <%= public.user.name %></p>
+                </div>
+                <div class="details">
+                    <p> Total Food Items : <%= public.recipe_foods.length %></p>
+                    <p> Total Price : $ <%= public.total_price %></p>
+                </div>
+            </li>
+        <%end%>
+    <ul>
+</div>
